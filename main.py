@@ -22,7 +22,7 @@ if page == 'Bowling':
     tab1, tab2,tab3,tab4,tab5 = st.tabs(['Best Bowling Economy','Best Bowling Strike',
                             'Most Dot Balls Inning','Most Runs Conceded Innings','Most Wickets',])
     with tab1:
-        BestBowlingEconomy = pd.read_csv("IPLDataset2022\BestBowlingEconomyInnings2022.csv")
+        BestBowlingEconomy = pd.read_csv("IPLDataset2022/BestBowlingEconomyInnings2022.csv")
         st.write('## Best Bowling Economy Innings - 2022')
         st.write(BestBowlingEconomy)
 
@@ -37,7 +37,7 @@ if page == 'Bowling':
     
     with tab2:
         ###### BestBowlingEconomy ###########
-        BestBowlingStrike = pd.read_csv("IPLDataset2022\Best Bowling Strike Rate Innings - 2022.csv")
+        BestBowlingStrike = pd.read_csv("IPLDataset2022/Best Bowling Strike Rate Innings - 2022.csv")
         st.write('## Best Bowling Strike Rate Innings - 2022')
         st.write(BestBowlingStrike)
 
@@ -52,7 +52,7 @@ if page == 'Bowling':
 
     with tab3:
         ###### Most Dot Balls Inning ###########
-        MostDotBallsInning = pd.read_csv("IPLDataset2022\Most Dot Balls Innings - 2022.csv")
+        MostDotBallsInning = pd.read_csv("IPLDataset2022/Most Dot Balls Innings - 2022.csv")
         st.write('## Most Dot Balls Innings - 2022')
         st.write(MostDotBallsInning)
 
@@ -66,7 +66,7 @@ if page == 'Bowling':
 
     with tab4:
         ###### Most Runs Conceded Innings ###########
-        MostRunsConcededInnings = pd.read_csv("IPLDataset2022\Most Runs Conceded Innings - 2022.csv")
+        MostRunsConcededInnings = pd.read_csv("IPLDataset2022/Most Runs Conceded Innings - 2022.csv")
         st.write('## Most Runs Conceded Innings - 2022')
         st.write(MostDotBallsInning)
 
@@ -80,7 +80,7 @@ if page == 'Bowling':
 
     with tab5:
         ###### Most Runs Conceded Innings ###########
-        MostWickets = pd.read_csv("IPLDataset2022\Most Wickets - 2022.csv")
+        MostWickets = pd.read_csv("IPLDataset2022/Most Wickets - 2022.csv")
         st.write('## Most Wickets - 2022')
         st.write(MostWickets)
 

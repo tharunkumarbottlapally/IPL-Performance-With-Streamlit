@@ -22,7 +22,7 @@ if page == 'Bowling':
     tab1, tab2,tab3,tab4,tab5 = st.tabs(['Best Bowling Economy','Best Bowling Strike',
                             'Most Dot Balls Inning','Most Runs Conceded Innings','Most Wickets',])
     with tab1:
-        BestBowlingEconomy = pd.read_csv("IPLDataset2022/BestBowlingEconomyInnings2022.csv")
+        BestBowlingEconomy = pd.read_csv("IPLDataset2022\BestBowlingEconomyInnings2022.csv")
         st.write('## Best Bowling Economy Innings - 2022')
         st.write(BestBowlingEconomy)
 
@@ -37,7 +37,7 @@ if page == 'Bowling':
     
     with tab2:
         ###### BestBowlingEconomy ###########
-        BestBowlingStrike = pd.read_csv("IPLDataset2022/Best Bowling Strike Rate Innings - 2022.csv")
+        BestBowlingStrike = pd.read_csv("IPLDataset2022\Best Bowling Strike Rate Innings - 2022.csv")
         st.write('## Best Bowling Strike Rate Innings - 2022')
         st.write(BestBowlingStrike)
 
@@ -52,7 +52,7 @@ if page == 'Bowling':
 
     with tab3:
         ###### Most Dot Balls Inning ###########
-        MostDotBallsInning = pd.read_csv("IPLDataset2022/Most Dot Balls Innings - 2022.csv")
+        MostDotBallsInning = pd.read_csv("IPLDataset2022\Most Dot Balls Innings - 2022.csv")
         st.write('## Most Dot Balls Innings - 2022')
         st.write(MostDotBallsInning)
 
@@ -66,7 +66,7 @@ if page == 'Bowling':
 
     with tab4:
         ###### Most Runs Conceded Innings ###########
-        MostRunsConcededInnings = pd.read_csv("IPLDataset2022/Most Runs Conceded Innings - 2022.csv")
+        MostRunsConcededInnings = pd.read_csv("IPLDataset2022\Most Runs Conceded Innings - 2022.csv")
         st.write('## Most Runs Conceded Innings - 2022')
         st.write(MostDotBallsInning)
 
@@ -80,7 +80,7 @@ if page == 'Bowling':
 
     with tab5:
         ###### Most Runs Conceded Innings ###########
-        MostWickets = pd.read_csv("IPLDataset2022/Most Wickets - 2022.csv")
+        MostWickets = pd.read_csv("IPLDataset2022\Most Wickets - 2022.csv")
         st.write('## Most Wickets - 2022')
         st.write(MostWickets)
 
@@ -98,8 +98,8 @@ if page == 'Bowling':
         st.altair_chart(BarMostWickets,use_container_width=True)     
 ####### BATTING ###########
 if page == 'Batting':
-    tab1,tab2=st.tabs(['Most Runs','Fastest Centuries'])
-    with tab1:
+    tabbat1,tabbat2,tabbat3,tabbat4,tabbat5=st.tabs(['Most Runs','Most Sixes Innings','Most Fours Innings','Fastest Centuries','Most Dot Balls Innings'])
+    with tabbat1:
                         ###### Most Runs ###########
                 MostRuns = pd.read_csv("IPLDataset2022/Most Runs - 2022.csv")
                 st.write('## Most Runs - 2022')
@@ -117,3 +117,79 @@ if page == 'Batting':
                                 )
                                 )
                 st.altair_chart(BarMostRuns,use_container_width=True)
+
+    with tabbat2:
+                        ###### Most Sixes Innings ###########
+                MostSixesInnings = pd.read_csv("IPLDataset2022/Most Sixes Innings - 2022.csv")
+                st.write('## Most Sixes Innings - 2022')
+                st.write(MostSixesInnings)
+
+                BarMostSixesInnings=alt.Chart(MostSixesInnings).mark_bar().encode(
+                                x='6s',
+                                y='Player',
+                                tooltip=['BF'],
+                                color='Against',
+                                order=alt.Order(
+                                # Sort the segments of the bars by this field
+                                '6s',
+                                sort='ascending'
+                                )
+                                )
+                st.altair_chart(BarMostSixesInnings,use_container_width=True)
+
+    with tabbat3:
+                        ###### Most Fours Innings ###########
+                MostFoursInnings = pd.read_csv("IPLDataset2022/Most Fours Innings - 2022.csv")
+                st.write('## Most Fours Innings - 2022')
+                st.write(MostFoursInnings)
+
+                BarMostFoursInnings=alt.Chart(MostFoursInnings).mark_bar().encode(
+                                x='4s',
+                                y='Player',
+                                tooltip=['BF'],
+                                color='Against',
+                                order=alt.Order(
+                                # Sort the segments of the bars by this field
+                                '4s',
+                                sort='ascending'
+                                )
+                                )
+                st.altair_chart(BarMostFoursInnings,use_container_width=True)
+
+    with tabbat4:
+                        ###### Fastest Centuries ###########
+                FastestCenturies = pd.read_csv("IPLDataset2022/Fastest Centuries - 2022.csv")
+                st.write('## Fastest Centuries- 2022')
+                st.write(FastestCenturies)
+
+                BarFastestCenturies=alt.Chart(FastestCenturies).mark_bar().encode(
+                                x='Runs',
+                                y='Player',
+                                tooltip=['BF'],
+                                color='Against',
+                                order=alt.Order(
+                                # Sort the segments of the bars by this field
+                                'Runs',
+                                sort='ascending'
+                                )
+                                )
+                st.altair_chart(BarFastestCenturies,use_container_width=True)
+
+    with tabbat5:
+                        ###### Most Dot Balls Innings ###########
+                MostDotBallsInnings = pd.read_csv("IPLDataset2022/Most Dot Balls Innings - 2022.csv")
+                st.write('## Most Dot Balls Innings- 2022')
+                st.write(MostDotBallsInnings)
+
+                BarMostDotBallsInnings=alt.Chart(MostDotBallsInnings).mark_bar().encode(
+                                x='Dots',
+                                y='Player',
+                                tooltip=['BF'],
+                                color='Against',
+                                order=alt.Order(
+                                # Sort the segments of the bars by this field
+                                'Dots',
+                                sort='ascending'
+                                )
+                                )
+                st.altair_chart(BarMostDotBallsInnings,use_container_width=True)

@@ -101,7 +101,7 @@ if page == 'Batting':
     tab1,tab2=st.tabs(['Most Runs','Fastest Centuries'])
     with tab1:
                         ###### Most Runs ###########
-                MostRuns = pd.read_csv("IPLDataset2022\Most Runs - 2022.csv")
+                MostRuns = pd.read_csv("IPLDataset2022/Most Runs - 2022.csv")
                 st.write('## Most Runs - 2022')
                 st.write(MostRuns)
 

@@ -92,7 +92,7 @@ if page == 'Bowling':
                         order=alt.Order(
                          # Sort the segments of the bars by this field
                         'Wkts',
-                        sort='ascending'
+                        sort='descending'
                         )
                         )
         st.altair_chart(BarMostWickets,use_container_width=True)     
@@ -113,7 +113,7 @@ if page == 'Batting':
                                 order=alt.Order(
                                 # Sort the segments of the bars by this field
                                 'Runs',
-                                sort='ascending'
+                                sort='descending'
                                 )
                                 )
                 st.altair_chart(BarMostRuns,use_container_width=True)
@@ -132,7 +132,7 @@ if page == 'Batting':
                                 order=alt.Order(
                                 # Sort the segments of the bars by this field
                                 '6s',
-                                sort='ascending'
+                                sort='descending'
                                 )
                                 )
                 st.altair_chart(BarMostSixesInnings,use_container_width=True)
@@ -151,7 +151,7 @@ if page == 'Batting':
                                 order=alt.Order(
                                 # Sort the segments of the bars by this field
                                 '4s',
-                                sort='ascending'
+                                sort='descending'
                                 )
                                 )
                 st.altair_chart(BarMostFoursInnings,use_container_width=True)
@@ -170,7 +170,7 @@ if page == 'Batting':
                                 order=alt.Order(
                                 # Sort the segments of the bars by this field
                                 'Runs',
-                                sort='ascending'
+                                sort='descending'
                                 )
                                 )
                 st.altair_chart(BarFastestCenturies,use_container_width=True)
@@ -189,7 +189,7 @@ if page == 'Batting':
                                 order=alt.Order(
                                 # Sort the segments of the bars by this field
                                 'Runs',
-                                sort='ascending'
+                                sort='descending'
                                 )
                                 )
                 st.altair_chart(BarFastestFifties,use_container_width=True)

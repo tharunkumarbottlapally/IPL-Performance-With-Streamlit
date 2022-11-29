@@ -29,7 +29,7 @@ if page == 'Bowling':
 
         BarBestBowlingEconomy=alt.Chart(BestBowlingEconomy).mark_bar().encode(
             x='Econ',
-            y='Player',
+            y=alt.Y('Player', sort='-x'),
             color='Against',
             tooltip=['Econ','Against'],
         )
@@ -43,7 +43,7 @@ if page == 'Bowling':
 
         BarBestBowlingStrike=alt.Chart(BestBowlingStrike).mark_bar().encode(
             x='SR',
-            y='Player',
+            y=alt.Y('Player', sort='-x'),
             color='Against',
             tooltip=['SR','Against'],
         )
@@ -58,7 +58,7 @@ if page == 'Bowling':
 
         BarMostDotBallsInning=alt.Chart(MostDotBallsInning).mark_bar().encode(
             x='Dots',
-            y='Player',
+            y=alt.Y('Player', sort='-x'),
             color='Ov',
             tooltip=['Dots','Against'],
         )
@@ -72,9 +72,9 @@ if page == 'Bowling':
 
         BarMostRunsConcededInnings=alt.Chart(MostRunsConcededInnings).mark_bar().encode(
             x='Runs',
-            y='Player',
+            y=alt.Y('Player', sort='-x'),
             color='Ov',
-            tooltip=['Wkts','Against'],
+            tooltip=['Runs','Against'],
         )
         st.altair_chart(BarMostRunsConcededInnings,use_container_width=True)        
 
@@ -86,7 +86,7 @@ if page == 'Bowling':
 
         BarMostWickets=alt.Chart(MostWickets).mark_bar().encode(
                         x='Wkts',
-                        y='Player',
+                        y=alt.Y('Player', sort='-x'),
                         tooltip=['Wkts'],
                         color='Mat',
                         order=alt.Order(
@@ -107,7 +107,7 @@ if page == 'Batting':
 
                 BarMostRuns=alt.Chart(MostRuns).mark_bar().encode(
                                 x='Runs',
-                                y='Player',
+                                y=alt.Y('Player', sort='-x'),
                                 tooltip=['Runs'],
                                 color='Mat',
                                 order=alt.Order(
@@ -125,8 +125,8 @@ if page == 'Batting':
                 st.write(MostSixesInnings)
 
                 BarMostSixesInnings=alt.Chart(MostSixesInnings).mark_bar().encode(
-                                x='6s',
-                                y='Player',
+                                x=alt.Y('6s', sort='-x'),
+                                y=alt.Y('Player', sort='-x'),
                                 tooltip=['6s'],
                                 color='Against',
                                 order=alt.Order(
@@ -145,7 +145,7 @@ if page == 'Batting':
 
                 BarMostFoursInnings=alt.Chart(MostFoursInnings).mark_bar().encode(
                                 x='4s',
-                                y='Player',
+                                y=alt.Y('Player', sort='-x'),
                                 tooltip=['4s'],
                                 color='Against',
                                 order=alt.Order(
@@ -164,7 +164,7 @@ if page == 'Batting':
 
                 BarFastestCenturies=alt.Chart(FastestCenturies).mark_bar().encode(
                                 x='Runs',
-                                y='Player',
+                                y=alt.Y('Player', sort='-x'),
                                 tooltip=['BF'],
                                 color='Against',
                                 order=alt.Order(
@@ -183,7 +183,7 @@ if page == 'Batting':
 
                 BarFastestFifties=alt.Chart(FastestFifties).mark_bar().encode(
                                 x='Runs',
-                                y='Player',
+                                y=alt.Y('Player', sort='-x'),
                                 tooltip=['BF'],
                                 color='Against',
                                 order=alt.Order(

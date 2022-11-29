@@ -127,7 +127,7 @@ if page == 'Batting':
                 BarMostSixesInnings=alt.Chart(MostSixesInnings).mark_bar().encode(
                                 x='6s',
                                 y='Player',
-                                tooltip=['BF'],
+                                tooltip=['6s'],
                                 color='Against',
                                 order=alt.Order(
                                 # Sort the segments of the bars by this field
@@ -146,7 +146,7 @@ if page == 'Batting':
                 BarMostFoursInnings=alt.Chart(MostFoursInnings).mark_bar().encode(
                                 x='4s',
                                 y='Player',
-                                tooltip=['BF'],
+                                tooltip=['4s'],
                                 color='Against',
                                 order=alt.Order(
                                 # Sort the segments of the bars by this field
@@ -184,7 +184,7 @@ if page == 'Batting':
                 BarMostDotBallsInnings=alt.Chart(MostDotBallsInnings).mark_bar().encode(
                                 x='Dots',
                                 y='Player',
-                                tooltip=['BF'],
+                                tooltip=['Dots'],
                                 color='Against',
                                 order=alt.Order(
                                 # Sort the segments of the bars by this field

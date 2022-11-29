@@ -98,7 +98,7 @@ if page == 'Bowling':
         st.altair_chart(BarMostWickets,use_container_width=True)     
 ####### BATTING ###########
 if page == 'Batting':
-    tabbat1,tabbat2,tabbat3,tabbat4,tabbat5=st.tabs(['Most Runs','Most Sixes Innings','Most Fours Innings','Fastest Centuries','Most Dot Balls Innings'])
+    tabbat1,tabbat2,tabbat3,tabbat4,tabbat5=st.tabs(['Most Runs','Most Sixes Innings','Most Fours Innings','Fastest Centuries','Fastest Fifties'])
     with tabbat1:
                         ###### Most Runs ###########
                 MostRuns = pd.read_csv("IPLDataset2022/Most Runs - 2022.csv")
@@ -176,20 +176,20 @@ if page == 'Batting':
                 st.altair_chart(BarFastestCenturies,use_container_width=True)
 
     with tabbat5:
-                        ###### Most Dot Balls Innings ###########
-                MostDotBallsInnings = pd.read_csv("IPLDataset2022/Most Dot Balls Innings - 2022.csv")
-                st.write('## Most Dot Balls Innings- 2022')
-                st.write(MostDotBallsInnings)
+                        ###### Fastest Fifties ###########
+                FastestFifties = pd.read_csv("IPLDataset2022/Fastest Fifties - 2022.csv")
+                st.write('## Fastest Centuries- 2022')
+                st.write(FastestFifties)
 
-                BarMostDotBallsInnings=alt.Chart(MostDotBallsInnings).mark_bar().encode(
-                                x='Dots',
+                BarFastestFifties=alt.Chart(FastestFifties).mark_bar().encode(
+                                x='Runs',
                                 y='Player',
-                                tooltip=['Dots'],
+                                tooltip=['BF'],
                                 color='Against',
                                 order=alt.Order(
                                 # Sort the segments of the bars by this field
-                                'Dots',
+                                'Runs',
                                 sort='ascending'
                                 )
                                 )
-                st.altair_chart(BarMostDotBallsInnings,use_container_width=True)
+                st.altair_chart(BarFastestFifties,use_container_width=True)

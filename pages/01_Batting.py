@@ -7,8 +7,9 @@ import altair as alt
 
 alltime,seasons=st.tabs(['All Time Records','By Season Stats'])
 with alltime:
-    tabbat1,tabbat2,tabbat3,tabbat4,tabbat5=st.tabs(['Most Runs','Most Sixes Innings','Most Fours Innings','Fastest Centuries','Fastest Fifties'])
-    with tabbat1:
+
+        tabbat1,tabbat2,tabbat3,tabbat4,tabbat5,tabbat6=st.tabs(['Most Runs','Most Sixes Innings','Most Fours Innings','Fastest Centuries','Fastest Fifties','Most Runs Over'])
+        with tabbat1:
                         ###### Most Runs ###########
                 MostRuns = pd.read_csv("IPLDataset/AllSeasonsCombined/Most Runs All Seasons Combine.csv")
                 MostRuns=MostRuns.sort_values(by=['Runs'],ascending=False)
@@ -29,7 +30,7 @@ with alltime:
                                 )
                 st.altair_chart(BarMostRuns,use_container_width=True)
 
-    with tabbat2:
+        with tabbat2:
                         ###### Most Sixes Innings ###########
                 MostSixesInnings = pd.read_csv("IPLDataset/AllSeasonsCombined/Most Sixes Per Innings All Seasons Combine.csv")
                 MostSixesInnings=MostSixesInnings.sort_values(by=['6s'],ascending=False)
@@ -46,7 +47,7 @@ with alltime:
                                 )
                 st.altair_chart(BarMostSixesInnings,use_container_width=True)
 
-    with tabbat3:
+        with tabbat3:
                         ###### Most Fours Innings ###########
                 MostFoursInnings = pd.read_csv("IPLDataset/AllSeasonsCombined/Most Fours Per Innings All Seasons Combine.csv")
                 MostFoursInnings=MostFoursInnings.sort_values(by=['4s'],ascending=False)
@@ -63,7 +64,7 @@ with alltime:
                                 )
                 st.altair_chart(BarMostFoursInnings,use_container_width=True)
 
-    with tabbat4:
+        with tabbat4:
                         ###### Fastest Centuries ###########
                 FastestCenturies = pd.read_csv("IPLDataset/AllSeasonsCombined/Fastest Centuries All Seasons Combine.csv")
                 FastestCenturies=FastestCenturies.sort_values(by=['BF'],ascending=True)
@@ -80,7 +81,7 @@ with alltime:
                                 )
                 st.altair_chart(BarFastestCenturies,use_container_width=True)
 
-    with tabbat5:
+        with tabbat5:
                         ###### Fastest Fifties ###########
                 FastestFifties = pd.read_csv("IPLDataset/AllSeasonsCombined/Fastest Fifties All Seasons Combine.csv")
                 FastestFifties=FastestFifties.sort_values(by=['BF'],ascending=True)
@@ -96,13 +97,29 @@ with alltime:
                                 
                                 )
                 st.altair_chart(BarFastestFifties,use_container_width=True)
+        with tabbat6:
+                                ###### Most Runs over ###########
+                        MostRunsover = pd.read_csv("IPLDataset/AllSeasonsCombined/Most Runs Per Over All Seasons Combine.csv")
+                        MostRunsover=MostRunsover.sort_values(by=['Runs'],ascending=False)
+                        st.write('## Most Runs over')
+                        st.write(MostRunsover)
+                        top20MostRunsover=MostRunsover.head(20)
+
+                        BarMostRunsover=alt.Chart(top20MostRunsover).mark_bar().encode(
+                                        x='Runs',
+                                        y=alt.Y('Player', sort='-x'),
+                                        tooltip=['Runs','Match Date'],
+                                        color='Against',
+                                        
+                                        )
+                        st.altair_chart(BarMostRunsover,use_container_width=True)
 with seasons:
         
         options = st.selectbox(
         'Select Year',
         ["2008", '2009', '2010','2011','2012','2013','2014','2015','2016','2017','2018','2019','2020','2021',])
         if options ==options:
-                tabbat1,tabbat2,tabbat3,tabbat4,tabbat5=st.tabs(['Most Runs','Most Sixes Innings','Most Fours Innings','Fastest Centuries','Fastest Fifties'])
+                tabbat1,tabbat2,tabbat3,tabbat4,tabbat5,tabbat6=st.tabs(['Most Runs','Most Sixes Innings','Most Fours Innings','Fastest Centuries','Fastest Fifties','Most Runs Over'])
                 with tabbat1:
                                         ###### Most Runs ###########
                                 MostRuns = pd.read_csv("IPLDataset/MostRuns/Most Runs - "+options+".csv")
@@ -191,5 +208,21 @@ with seasons:
                                                 
                                                 )
                                 st.altair_chart(BarFastestFifties,use_container_width=True)
+                with tabbat6:
+                                        ###### Most Runs over ###########
+                                MostRunsover = pd.read_csv("IPLDataset/MostRunsOver/Most Runs Over - "+options+".csv")
+                                MostRunsover=MostRunsover.sort_values(by=['Runs'],ascending=False)
+                                st.write('## Most Runs over')
+                                st.write(MostRunsover)
+                                top20MostRunsover=MostRunsover.head(20)
+
+                                BarMostRunsover=alt.Chart(top20MostRunsover).mark_bar().encode(
+                                                x='Runs',
+                                                y=alt.Y('Player', sort='-x'),
+                                                tooltip=['Runs','Match Date'],
+                                                color='Against',
+                                                
+                                                )
+                                st.altair_chart(BarMostRunsover,use_container_width=True)
 
 

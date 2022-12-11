@@ -30,3 +30,6 @@ This Data set is taken from  Kaggle.
 Future work:
 What if any future work do you plan to keep on doing to improve your app.
 To add more insights and visuals player specific. 
+
+This thing is done using streamlit and deployed in streamlit cloud.Here is the link for the same.
+https://iplperformance.streamlit.app/

@@ -1,4 +1,7 @@
+
 # IPL-Performance-With-Streamlit
+
+Introduction: Domain problem characterization.
 
 The Indian Premier League (IPL) is a professional mens Twenty20 cricket league, contested by ten teams based out of ten Indian cities.
 The league was founded by the Board of Control for Cricket in India (BCCI) in 2007.
@@ -14,3 +17,16 @@ There have been fourteen seasons of the IPL tournament.
 The current IPL title holders are the Chennai Super Kings, winning the 2021 season.
 
 The venue for the 2020 season was moved due to the COVID-19 pandemic and games were played in the United Arab Emirates.
+
+What is the problem you want to solve?
+To analyze the player performance season-wise to buy the best player in upcoming auctions.
+
+Data/operation abstraction design:
+How did you prepare your data?
+
+This Data set is taken from  Kaggle.
+
+
+Future work:
+What if any future work do you plan to keep on doing to improve your app.
+To add more insights and visuals player specific. 

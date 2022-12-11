@@ -12,6 +12,7 @@ with alltime:
         BestBowlingEconomy=BestBowlingEconomy.sort_values(by=['Econ'],ascending=True)
         st.write('## Best Bowling Economy Innings')
         BestBowlingEconomy=BestBowlingEconomy.reset_index(drop=True)
+        BestBowlingEconomy=BestBowlingEconomy.iloc[: , 1:]
         st.write(BestBowlingEconomy)
         top20eco=BestBowlingEconomy.head(20)
 
@@ -29,6 +30,7 @@ with alltime:
         BestBowlingStrike=BestBowlingStrike.sort_values(by=['SR'],ascending=False)
         st.write('## Best Bowling Strike Rate Innings')
         BestBowlingStrike=BestBowlingStrike.reset_index(drop=True)
+        BestBowlingStrike=BestBowlingStrike.iloc[: , 1:]
         st.write(BestBowlingStrike)
         top20Strike=BestBowlingStrike.head(20)
 
@@ -47,13 +49,14 @@ with alltime:
         MostDotBallsInning=MostDotBallsInning.sort_values(by=['Dots'],ascending=False)
         st.write('## Most Dot Balls Innings ')
         MostDotBallsInning=MostDotBallsInning.reset_index(drop=True)
+        MostDotBallsInning=MostDotBallsInning.iloc[: , 1:]
         st.write(MostDotBallsInning)
         top20Dot=MostDotBallsInning.head(20)
 
         BarMostDotBallsInning=alt.Chart(top20Dot).mark_bar().encode(
             x='Dots',
             y=alt.Y('Player', sort='-x'),
-            color='Ov',
+            color='Dots',
             tooltip=['Dots','Against','Match Date'],
         )
         st.altair_chart(BarMostDotBallsInning,use_container_width=True)
@@ -64,13 +67,14 @@ with alltime:
         MostRunsConcededInnings=MostRunsConcededInnings.sort_values(by=['Runs'],ascending=False)
         st.write('## Most Runs Conceded Innings')
         MostRunsConcededInnings=MostRunsConcededInnings.reset_index(drop=True)
+        MostRunsConcededInnings=MostRunsConcededInnings.iloc[: , 1:]
         st.write(MostRunsConcededInnings)
         top20Runs=MostRunsConcededInnings.head(20)
 
         BarMostRunsConcededInnings=alt.Chart(top20Runs).mark_bar().encode(
             x='Runs',
             y=alt.Y('Player', sort='-x'),
-            color='Ov',
+            color='Runs',
             tooltip=['Runs','Against','Match Date'],
         )
         st.altair_chart(BarMostRunsConcededInnings,use_container_width=True)        
@@ -81,6 +85,7 @@ with alltime:
         MostWickets=MostWickets.sort_values(by=['Wkts'],ascending=False)
         st.write('## Most Wickets ')
         MostWickets=MostWickets.reset_index(drop=True)
+        MostWickets=MostWickets.iloc[: , 1:]
         st.write(MostWickets)
         top20Wickets=MostWickets.head(20)
 
@@ -108,6 +113,7 @@ with alltime:
                 BestBowlingEconomy = pd.read_csv("IPLDataset/BestBowlingEconomyInnings/Best Bowling Economy Innings - "+options+".csv")
                 BestBowlingEconomy=BestBowlingEconomy.sort_values(by=['Econ'],ascending=True)
                 st.write('## Best Bowling Economy Innings')
+                BestBowlingEconomy=BestBowlingEconomy.iloc[: , 1:]
                 st.write(BestBowlingEconomy)
                 top20eco=BestBowlingEconomy.head(20)
 
@@ -124,6 +130,7 @@ with alltime:
                 BestBowlingStrike = pd.read_csv("IPLDataset/BestBowlingStrikeRateInnings/Best Bowling Strike Rate Innings - "+options+".csv")
                 BestBowlingStrike=BestBowlingStrike.sort_values(by=['SR'],ascending=False)
                 st.write('## Best Bowling Strike Rate Innings')
+                BestBowlingStrike=BestBowlingStrike.iloc[: , 1:]
                 st.write(BestBowlingStrike)
                 top20Strike=BestBowlingStrike.head(20)
 
@@ -141,6 +148,7 @@ with alltime:
                 MostDotBallsInning = pd.read_csv("IPLDataset/MostDotBallsInnings/Most Dot Balls Innings - "+options+".csv")
                 MostDotBallsInning=MostDotBallsInning.sort_values(by=['Dots'],ascending=False)
                 st.write('## Most Dot Balls Innings ')
+                MostDotBallsInning=MostDotBallsInning.iloc[: , 1:]
                 st.write(MostDotBallsInning)
                 top20Dot=MostDotBallsInning.head(20)
 
@@ -157,6 +165,7 @@ with alltime:
                 MostRunsConcededInnings = pd.read_csv("IPLDataset/MostRunsConceded Innings/Most Runs Conceded Innings - "+options+".csv")
                 MostRunsConcededInnings=MostRunsConcededInnings.sort_values(by=['Runs'],ascending=False)
                 st.write('## Most Runs Conceded Innings')
+                MostRunsConcededInnings=MostRunsConcededInnings.iloc[: , 1:]
                 st.write(MostRunsConcededInnings)
                 top20Runs=MostRunsConcededInnings.head(20)
 
@@ -173,6 +182,7 @@ with alltime:
                 MostWickets = pd.read_csv("IPLDataset/MostWickets/Most Wickets - "+options+".csv")
                 MostWickets=MostWickets.sort_values(by=['Wkts'],ascending=False)
                 st.write('## Most Wickets ')
+                MostWickets=MostWickets.iloc[: , 1:]
                 st.write(MostWickets)
                 top20Wickets=MostWickets.head(20)
 

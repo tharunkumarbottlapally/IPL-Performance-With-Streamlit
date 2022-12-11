@@ -11,6 +11,7 @@ with alltime:
         BestBowlingEconomy = pd.read_csv("IPLDataset/AllSeasonsCombined/Best Bowling Economy Per Innings All Seasons Combine.csv")
         BestBowlingEconomy=BestBowlingEconomy.sort_values(by=['Econ'],ascending=True)
         st.write('## Best Bowling Economy Innings')
+        BestBowlingEconomy=BestBowlingEconomy.reset_index(drop=True)
         st.write(BestBowlingEconomy)
         top20eco=BestBowlingEconomy.head(20)
 
@@ -27,6 +28,7 @@ with alltime:
         BestBowlingStrike = pd.read_csv("IPLDataset/AllSeasonsCombined/Best Bowling Strike Rate Per Innings All Seasons Combine.csv")
         BestBowlingStrike=BestBowlingStrike.sort_values(by=['SR'],ascending=False)
         st.write('## Best Bowling Strike Rate Innings')
+        BestBowlingStrike=BestBowlingStrike.reset_index(drop=True)
         st.write(BestBowlingStrike)
         top20Strike=BestBowlingStrike.head(20)
 
@@ -44,6 +46,7 @@ with alltime:
         MostDotBallsInning = pd.read_csv("IPLDataset/AllSeasonsCombined/Most Dot Balls Per Innings All Seasons Combine.csv")
         MostDotBallsInning=MostDotBallsInning.sort_values(by=['Dots'],ascending=False)
         st.write('## Most Dot Balls Innings ')
+        MostDotBallsInning=MostDotBallsInning.reset_index(drop=True)
         st.write(MostDotBallsInning)
         top20Dot=MostDotBallsInning.head(20)
 
@@ -60,6 +63,7 @@ with alltime:
         MostRunsConcededInnings = pd.read_csv("IPLDataset/AllSeasonsCombined/Most Runs Conceded Per Innings All Seasons Combine.csv")
         MostRunsConcededInnings=MostRunsConcededInnings.sort_values(by=['Runs'],ascending=False)
         st.write('## Most Runs Conceded Innings')
+        MostRunsConcededInnings=MostRunsConcededInnings.reset_index(drop=True)
         st.write(MostRunsConcededInnings)
         top20Runs=MostRunsConcededInnings.head(20)
 
@@ -76,6 +80,7 @@ with alltime:
         MostWickets = pd.read_csv("IPLDataset/AllSeasonsCombined/Most Wickets All Seasons Combine.csv")
         MostWickets=MostWickets.sort_values(by=['Wkts'],ascending=False)
         st.write('## Most Wickets ')
+        MostWickets=MostWickets.reset_index(drop=True)
         st.write(MostWickets)
         top20Wickets=MostWickets.head(20)
 

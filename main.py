@@ -20,6 +20,7 @@ with bowlingtab:
     with tab1:
         BestBowlingEconomy = pd.read_csv("IPLDataset2022/BestBowlingEconomyInnings2022.csv")
         st.write('## Best Bowling Economy Innings - 2022')
+        BestBowlingEconomy=BestBowlingEconomy.iloc[: , 1:]
         st.write(BestBowlingEconomy)
         top20eco=BestBowlingEconomy.head(20)
 
@@ -36,6 +37,7 @@ with bowlingtab:
         ###### BestBowlingEconomy ###########
         BestBowlingStrike = pd.read_csv("IPLDataset2022/Best Bowling Strike Rate Innings - 2022.csv")
         st.write('## Best Bowling Strike Rate Innings - 2022')
+        BestBowlingStrike=BestBowlingStrike.iloc[: , 1:]
         st.write(BestBowlingStrike)
         top20Strike=BestBowlingStrike.head(20)
 
@@ -52,6 +54,7 @@ with bowlingtab:
         ###### Most Dot Balls Inning ###########
         MostDotBallsInning = pd.read_csv("IPLDataset2022/Most Dot Balls Innings - 2022.csv")
         st.write('## Most Dot Balls Innings - 2022')
+        MostDotBallsInning=MostDotBallsInning.iloc[: , 1:]
         st.write(MostDotBallsInning)
         top20Dot=MostDotBallsInning.head(20)
 
@@ -67,6 +70,7 @@ with bowlingtab:
         ###### Most Runs Conceded Innings ###########
         MostRunsConcededInnings = pd.read_csv("IPLDataset2022/Most Runs Conceded Innings - 2022.csv")
         st.write('## Most Runs Conceded Innings - 2022')
+        MostRunsConcededInnings=MostRunsConcededInnings.iloc[: , 1:]
         st.write(MostRunsConcededInnings)
         top20Runs=MostRunsConcededInnings.head(20)
 
@@ -82,6 +86,7 @@ with bowlingtab:
         ###### Most Runs Conceded Innings ###########
         MostWickets = pd.read_csv("IPLDataset2022/Most Wickets - 2022.csv")
         st.write('## Most Wickets - 2022')
+        MostWickets=MostWickets.iloc[: , 1:]
         st.write(MostWickets)
         top20Wickets=MostWickets.head(20)
 
@@ -105,6 +110,7 @@ with battingtab:
                         ###### Most Runs ###########
                 MostRuns = pd.read_csv("IPLDataset2022/Most Runs - 2022.csv")
                 st.write('## Most Runs - 2022')
+                MostRuns = MostRuns.iloc[: , 1:]
                 st.write(MostRuns)
                 top20MostRuns=MostRuns.head(20)
 
@@ -125,6 +131,7 @@ with battingtab:
                         ###### Most Sixes Innings ###########
                 MostSixesInnings = pd.read_csv("IPLDataset2022/Most Sixes Innings - 2022.csv")
                 st.write('## Most Sixes Innings - 2022')
+                MostSixesInnings=MostSixesInnings.iloc[: , 1:]
                 st.write(MostSixesInnings)
                 top20MostSixesInnings=MostSixesInnings.head(20)
 
@@ -141,6 +148,7 @@ with battingtab:
                         ###### Most Fours Innings ###########
                 MostFoursInnings = pd.read_csv("IPLDataset2022/Most Fours Innings - 2022.csv")
                 st.write('## Most Fours Innings - 2022')
+                MostFoursInnings=MostFoursInnings.iloc[: , 1:]
                 st.write(MostFoursInnings)
                 top20MostFoursInnings=MostFoursInnings.head(20)
 
@@ -157,6 +165,7 @@ with battingtab:
                         ###### Fastest Centuries ###########
                 FastestCenturies = pd.read_csv("IPLDataset2022/Fastest Centuries - 2022.csv")
                 st.write('## Fastest Centuries- 2022')
+                FastestCenturies=FastestCenturies.iloc[: , 1:]
                 st.write(FastestCenturies)
                 top20FastestCenturies=FastestCenturies.head(20)
 
@@ -173,6 +182,7 @@ with battingtab:
                         ###### Fastest Fifties ###########
                 FastestFifties = pd.read_csv("IPLDataset2022/Fastest Fifties - 2022.csv")
                 st.write('## Fastest Centuries- 2022')
+                FastestFifties=FastestFifties.iloc[: , 1:]
                 st.write(FastestFifties)
                 top20FastestFifties=FastestFifties.head(20)
 

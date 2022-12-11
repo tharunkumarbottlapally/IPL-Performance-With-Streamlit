@@ -12,14 +12,7 @@ st.text(' The Indian Premier League (IPL) is a professional mens Twenty20 cricke
 
 st.subheader('Recent Year Stats')
 bowlingtab,battingtab = st.tabs(['Bowling','Batting'])
-#page = st.sidebar.selectbox('Select Stats',
- # ['Bowling','Batting'])
 
-
-
-###### BestBowlingEconomy ###########
-
-#if page == 'Bowling':
 with bowlingtab:
 
     tab1, tab2,tab3,tab4,tab5 = st.tabs(['Best Bowling Economy','Best Bowling Strike',

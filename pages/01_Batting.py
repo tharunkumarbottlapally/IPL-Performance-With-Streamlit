@@ -14,6 +14,7 @@ with alltime:
                 MostRuns=MostRuns.sort_values(by=['Runs'],ascending=False)
                 st.write('## Most Runs ')
                 MostRuns=MostRuns.reset_index(drop=True)
+                MostRuns=MostRuns.iloc[: , 1:]
                 st.write(MostRuns)
                 top20MostRuns=MostRuns.head(100)
 
@@ -36,8 +37,8 @@ with alltime:
                 MostSixesInnings=MostSixesInnings.sort_values(by=['6s'],ascending=False)
                 st.write('## Most Sixes Innings ')
                 MostSixesInnings=MostSixesInnings.reset_index(drop=True)
-                st.write(MostSixesInnings)
-                top20MostSixesInnings=MostSixesInnings.style.hide_index()
+                MostSixesInnings=MostSixesInnings.iloc[: , 1:]
+                st.write(MostSixesInnings)                
                 top20MostSixesInnings=MostSixesInnings.head(20)
 
                 BarMostSixesInnings=alt.Chart(top20MostSixesInnings).mark_bar().encode(
@@ -60,6 +61,7 @@ with alltime:
                 MostFoursInnings=MostFoursInnings.sort_values(by=['4s'],ascending=False)
                 st.write('## Most Fours Innings ')
                 MostFoursInnings=MostFoursInnings.reset_index(drop=True)
+                MostFoursInnings=MostFoursInnings.iloc[: , 1:]
                 st.write(MostFoursInnings)
                 top20MostFoursInnings=MostFoursInnings.head(50)
 
@@ -82,6 +84,7 @@ with alltime:
                 FastestCenturies=FastestCenturies.sort_values(by=['BF'],ascending=True)
                 st.write('## Fastest Centuries')
                 FastestCenturies=FastestCenturies.reset_index(drop=True)
+                FastestCenturies=FastestCenturies.iloc[: , 1:]
                 st.write(FastestCenturies)
                 top20FastestCenturies=FastestCenturies.head(20)
 
@@ -100,6 +103,7 @@ with alltime:
                 FastestFifties=FastestFifties.sort_values(by=['BF'],ascending=True)
                 st.write('## Fastest Centuries')
                 FastestFifties=FastestFifties.reset_index(drop=True)
+                FastestFifties=FastestFifties.iloc[: , 1:]
                 st.write(FastestFifties)
                 top20FastestFifties=FastestFifties.head(20)
 
@@ -117,6 +121,7 @@ with alltime:
                         MostRunsover=MostRunsover.sort_values(by=['Runs'],ascending=False)
                         st.write('## Most Runs over')
                         MostRunsover=MostRunsover.reset_index(drop=True)
+                        MostRunsover=MostRunsover.iloc[: , 1:]
                         st.write(MostRunsover)
                         top20MostRunsover=MostRunsover.head(20)
 
@@ -139,6 +144,7 @@ with seasons:
                                 ###### Most Runs ###########
                         MostRuns = pd.read_csv("IPLDataset/MostRuns/Most Runs - "+options+".csv")
                         MostRuns=MostRuns.sort_values(by=['Runs'],ascending=False)
+                        MostRuns=MostRuns.iloc[: , 1:]
                         st.write('## Most Runs ')
                         MostRuns=MostRuns.reset_index(drop=True)
                         st.write(MostRuns)
@@ -163,6 +169,7 @@ with seasons:
                         MostSixesInnings=MostSixesInnings.sort_values(by=['6s'],ascending=False)
                         st.write('## Most Sixes Innings ')
                         MostSixesInnings=MostSixesInnings.reset_index(drop=True)
+                        MostSixesInnings=MostSixesInnings.iloc[: , 1:]
                         st.write(MostSixesInnings)
                         top20MostSixesInnings=MostSixesInnings.head(20)
 
@@ -181,6 +188,7 @@ with seasons:
                         MostFoursInnings=MostFoursInnings.sort_values(by=['4s'],ascending=False)
                         st.write('## Most Fours Innings ')
                         MostFoursInnings=MostFoursInnings.reset_index(drop=True)
+                        MostFoursInnings=MostFoursInnings.iloc[: , 1:]
                         st.write(MostFoursInnings)
                         top20MostFoursInnings=MostFoursInnings.head(20)
 
@@ -199,6 +207,7 @@ with seasons:
                         FastestCenturies=FastestCenturies.sort_values(by=['BF'],ascending=True)
                         st.write('## Fastest Centuries')
                         FastestCenturies=FastestCenturies.reset_index(drop=True)
+                        FastestCenturies=FastestCenturies.iloc[: , 1:]
                         st.write(FastestCenturies)
                         top20FastestCenturies=FastestCenturies.head(20)
 
@@ -217,6 +226,7 @@ with seasons:
                         FastestFifties=FastestFifties.sort_values(by=['BF'],ascending=True)
                         st.write('## Fastest Centuries')
                         FastestFifties=FastestFifties.reset_index(drop=True)
+                        FastestFifties=FastestFifties.iloc[: , 1:]
                         st.write(FastestFifties)
                         top20FastestFifties=FastestFifties.head(20)
 
@@ -234,6 +244,7 @@ with seasons:
                         MostRunsover=MostRunsover.sort_values(by=['Runs'],ascending=False)
                         st.write('## Most Runs over')
                         MostRunsover=MostRunsover.reset_index(drop=True)
+                        MostRunsover=MostRunsover.iloc[: , 1:]
                         st.write(MostRunsover)
                         top20MostRunsover=MostRunsover.head(20)
 
